@@ -4,7 +4,7 @@
  * ✅ Plusieurs histoires (scénarios) avec 4 étapes chacune
  * ✅ Rotation automatique des étapes
  * ✅ Rotation automatique des histoires
- * ✅ Boutons fixes (CTA agence)
+ * ✅ Boutons fixes (CTA agence) affichés en permanence
  * ✅ Timer qui redémarre à chaque nouvelle histoire
  * ✅ Gestion des erreurs + reconnexion
  *
@@ -16,7 +16,7 @@ const RPC = require("discord-rpc");
 // ─────────────────────────────────────────────────────────────
 // 🎛️ CONFIGURATION
 // ─────────────────────────────────────────────────────────────
-const CLIENT_ID = "1042055853903188109"; // ⚠️ Remplace par ton App ID Discord
+const CLIENT_ID = "1042055853903188109"; // ⚠️ Ton App ID Discord
 
 // Durées (en secondes)
 const STEP_SECONDS = 10;   // durée d’une étape
@@ -24,8 +24,8 @@ const STORY_PAUSE = 5;     // pause entre deux histoires
 
 // Boutons (max 2)
 const BUTTONS = [
-  { label: "🌐 Découvrir mon agence", url: "https://hexwebdigital.com" }, // TODO
-  { label: "📩 Créer ton site", url: "https://hexwebdigital.com/contact" }, // TODO
+  { label: "🌐 Découvrir mon agence", url: "https://hexwebdigital.com" },
+  { label: "📩 Créer ton site", url: "https://hexwebdigital.com/contact" },
 ];
 
 // Histoires (tu peux en ajouter d’autres facilement)
@@ -69,9 +69,9 @@ function setPresence(step) {
     startTimestamp: Math.floor(cycleStart / 1000),
     largeImageKey: step.largeImageKey,
     largeImageText: step.largeImageText,
-    smallImageKey: "logo_agence", // TODO: upload un logo générique dans Art Assets
+    smallImageKey: "logo_agence", // ⚠️ Ajoute une image dans tes Art Assets
     smallImageText: "Hexweb",
-    buttons: BUTTONS,
+    buttons: BUTTONS, // ✅ toujours présent
     instance: false,
   };
 
@@ -83,8 +83,8 @@ function setPresence(step) {
 // Passe à l’étape suivante
 function nextStep() {
   const story = STORIES[storyIndex];
-
   stepIndex++;
+
   if (stepIndex >= story.length) {
     // Fin de l’histoire → pause → histoire suivante
     clearInterval(stepTimer);
@@ -157,11 +157,3 @@ process.on("SIGTERM", () => shutdown(0));
     console.error("Erreur:", e?.message || e);
   }
 })();
-
-
-
-
-
-
-
-
