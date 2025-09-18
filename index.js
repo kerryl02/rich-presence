@@ -16,16 +16,16 @@ const RPC = require("discord-rpc");
 // ─────────────────────────────────────────────────────────────
 // 🎛️ CONFIGURATION
 // ─────────────────────────────────────────────────────────────
-const CLIENT_ID = "TON_APPLICATION_ID"; // ⚠️ Remplace par ton App ID Discord
+const CLIENT_ID = "1042055853903188109"; // ⚠️ Remplace par ton App ID Discord
 
 // Durées (en secondes)
-const STEP_SECONDS = 20;   // durée d’une étape
+const STEP_SECONDS = 10;   // durée d’une étape
 const STORY_PAUSE = 5;     // pause entre deux histoires
 
 // Boutons (max 2)
 const BUTTONS = [
-  { label: "🌐 Découvrir mon agence", url: "https://ton-site-agence.com" }, // TODO
-  { label: "📩 Créer ton site", url: "https://ton-site-agence.com/contact" }, // TODO
+  { label: "🌐 Découvrir mon agence", url: "https://hexwebdigital.com" }, // TODO
+  { label: "📩 Créer ton site", url: "https://hexwebdigital.com/contact" }, // TODO
 ];
 
 // Histoires (tu peux en ajouter d’autres facilement)
@@ -157,3 +157,11 @@ process.on("SIGTERM", () => shutdown(0));
     console.error("Erreur:", e?.message || e);
   }
 })();
+
+
+
+
+
+
+
+
