@@ -70,7 +70,7 @@ function setPresence(step) {
     largeImageKey: step.largeImageKey,
     largeImageText: step.largeImageText,
     smallImageKey: "logo_agence", // TODO: upload un logo générique dans Art Assets
-    smallImageText: "Mon agence web",
+    smallImageText: "Hexweb",
     buttons: BUTTONS,
     instance: false,
   };
